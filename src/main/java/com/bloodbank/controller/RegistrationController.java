@@ -10,31 +10,32 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class RegistrationController {
 
-    @Autowired
-    private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+  @Autowired
+  private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/register")
-    public String showRegistrationForm() {
-        return "register";
+  @GetMapping("/register")
+public String showRegistrationForm() {
+    return "register"; // This should load register.html
+}
+
+
+  @PostMapping("/register")
+  public String registerUser(@RequestParam String email, @RequestParam String password) {
+    if (userRepository.findByEmail(email).isPresent()) {
+      return "redirect:/register?error"; // User already exists
     }
 
-    @PostMapping("/register")
-    public String registerUser(@RequestParam String email, @RequestParam String password) {
-        if (userRepository.findByEmail(email) != null) {
-            return "redirect:/register?error"; // handle already existing user
-        }
+    User user = User.builder()
+        .email(email)
+        .password(passwordEncoder.encode(password)) // 🔐 hashed!
+        .role("ROLE_USER")
+        .build();
 
-        User user = User.builder()
-                .email(email)
-                .password(passwordEncoder.encode(password))
-                .role("ROLE_USER")
-                .build();
+    userRepository.save(user);
+    return "redirect:/login?registered"; // ✅ success
+  }
 
-        userRepository.save(user);
-
-        return "redirect:/login?registered";
-    }
 }

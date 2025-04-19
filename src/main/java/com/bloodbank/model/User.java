@@ -24,7 +24,6 @@ public class User {
     private String role; // ROLE_ADMIN, ROLE_USER, etc.
 
     public boolean isEmpty() {
-      // TODO Auto-generated method stub
       throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
     }
 }

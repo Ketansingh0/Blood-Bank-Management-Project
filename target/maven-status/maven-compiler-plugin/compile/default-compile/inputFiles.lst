@@ -1,5 +1,6 @@
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/config/SecurityConfig.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/repository/UserRepository.java
+/Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/RegistrationController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/HomeController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/config/CustomAuthenticationSuccessHandler.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/AdminController.java

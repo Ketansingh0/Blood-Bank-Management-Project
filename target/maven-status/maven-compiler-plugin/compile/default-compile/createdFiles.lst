@@ -1,4 +1,5 @@
 com/bloodbank/model/User$UserBuilder.class
+com/bloodbank/controller/RegistrationController.class
 com/bloodbank/controller/AdminController.class
 com/bloodbank/config/SecurityConfig.class
 com/bloodbank/controller/UserController.class
