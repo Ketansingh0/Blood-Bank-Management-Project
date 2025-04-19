@@ -1,4 +1,5 @@
 com/bloodbank/model/User$UserBuilder.class
+com/bloodbank/model/BloodInventory.class
 com/bloodbank/controller/RegistrationController.class
 com/bloodbank/controller/AdminController.class
 com/bloodbank/config/SecurityConfig.class
@@ -8,4 +9,6 @@ com/bloodbank/model/User.class
 com/bloodbank/controller/HomeController.class
 com/bloodbank/service/UserDetailsServiceImpl.class
 com/bloodbank/BloodBankApplication.class
+com/bloodbank/model/BloodInventory$BloodInventoryBuilder.class
 com/bloodbank/repository/UserRepository.class
+com/bloodbank/repository/BloodInventoryRepository.class

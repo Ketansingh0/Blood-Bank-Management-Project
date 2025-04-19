@@ -2,8 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-    <h1>Welcome, Admin!</h1>
+    <h1>Welcome Admin!</h1>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/admin/inventory}">📋 View Blood Inventory</a></li>
+            <li><a th:href="@{/admin/inventory/add}">➕ Add New Inventory</a></li>
+        </ul>
+    </nav>
+
+    <p>Use the links above to manage blood inventory.</p>
 </body>
 </html>
