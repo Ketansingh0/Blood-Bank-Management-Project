@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "users") // 👈 Add this line to avoid using the reserved keyword 'user'
+@Table(name = "users") // 👈 Avoids using reserved keyword 'user'
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,18 +22,4 @@ public class User {
     private String password;
 
     private String role; // ROLE_ADMIN, ROLE_USER, etc.
-
-    public boolean isEmpty() {
-      throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
-    }
-
-    public User orElse(Object object) {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'orElse'");
-    }
-
-    public boolean isPresent() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'isPresent'");
-    }
 }

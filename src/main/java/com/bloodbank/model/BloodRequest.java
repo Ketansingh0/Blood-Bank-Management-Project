@@ -2,6 +2,7 @@ package com.bloodbank.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,9 +28,4 @@ public class BloodRequest {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    public void setRequestedAt(LocalDateTime now) {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'setRequestedAt'");
-    }
 }

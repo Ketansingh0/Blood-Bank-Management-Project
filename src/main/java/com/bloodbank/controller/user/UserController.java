@@ -25,7 +25,8 @@ public class UserController {
     @GetMapping("/user/dashboard")
     public String userDashboard(@AuthenticationPrincipal UserDetails userDetails, Model model) {
         String email = userDetails.getUsername();
-        User user = userRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found with email: " + email));
 
         List<BloodRequest> requests = bloodRequestRepository.findByUser(user);
         model.addAttribute("requests", requests);

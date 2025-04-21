@@ -48,7 +48,7 @@ public class BloodRequestController {
         }
 
         bloodRequest.setUser(user);
-        bloodRequest.setRequestedAt(LocalDateTime.now());
+        bloodRequest.setRequestDate(LocalDateTime.now());
         bloodRequestRepository.save(bloodRequest);
 
         model.addAttribute("success", "Blood request submitted successfully!");
