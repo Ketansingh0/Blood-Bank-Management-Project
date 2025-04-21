@@ -26,13 +26,10 @@
             display: block;
         }
 
-        .sidebar a:hover {
-            background-color: #495057;
-            color: #fff;
-        }
-
+        .sidebar a:hover,
         .sidebar .active {
             background-color: #495057;
+            color: #fff;
         }
 
         .main-content {
@@ -54,6 +51,7 @@
         <a href="/admin/dashboard"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
         <a href="/admin/inventory" class="active"><i class="fas fa-droplet me-2"></i>Blood Inventory</a>
         <a href="/admin/donors"><i class="fas fa-users me-2"></i>Donors</a>
+        <a href="/admin/requests"><i class="fas fa-file-medical me-2"></i>Blood Requests</a>
         <a href="/logout"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
     </div>
 
@@ -74,11 +72,11 @@
                     <div class="mb-3">
                         <label for="unit" class="form-label">Units</label>
                         <input type="number" id="unit" name="unit" class="form-control"
-                               placeholder="e.g. 10" required th:field="*{unit}">
+                               placeholder="e.g. 10" min="1" required th:field="*{unit}">
                     </div>
                     <div class="d-flex justify-content-between">
                         <a href="/admin/inventory" class="btn btn-secondary">
-                            <i class="fas fa-arrow-left"></i> Cancel
+                            <i class="fas fa-arrow-left me-1"></i> Cancel
                         </a>
                         <button type="submit" class="btn btn-danger">
                             <i class="fas fa-save me-1"></i> Update Unit

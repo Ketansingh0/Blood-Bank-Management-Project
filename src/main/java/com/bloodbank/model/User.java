@@ -26,4 +26,14 @@ public class User {
     public boolean isEmpty() {
       throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
     }
+
+    public User orElse(Object object) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'orElse'");
+    }
+
+    public boolean isPresent() {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'isPresent'");
+    }
 }

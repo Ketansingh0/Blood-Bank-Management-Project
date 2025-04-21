@@ -26,13 +26,9 @@
             display: block;
         }
 
-        .sidebar a:hover {
+        .sidebar a:hover, .sidebar .active {
             background-color: #495057;
             color: #fff;
-        }
-
-        .sidebar .active {
-            background-color: #495057;
         }
 
         .main-content {
@@ -43,16 +39,25 @@
         .card {
             border: none;
             border-radius: 1rem;
-            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .card .icon {
-            font-size: 2rem;
-            color: #dc3545;
+        .card i {
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
+
 <div class="d-flex">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -60,35 +65,51 @@
         <a href="/admin/dashboard" class="active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
         <a href="/admin/inventory"><i class="fas fa-droplet me-2"></i>Blood Inventory</a>
         <a href="/admin/donors"><i class="fas fa-users me-2"></i>Donors</a>
+        <a href="/admin/requests"><i class="fas fa-file-medical me-2"></i>Blood Requests</a>
         <a href="/logout"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
     </div>
 
     <!-- Main Content -->
     <div class="main-content container-fluid">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="fw-bold">Welcome, Admin</h3>
-        </div>
+        <h3 class="mb-4">Welcome, Admin!</h3>
 
         <div class="row g-4">
+            <!-- Total Units -->
             <div class="col-md-4">
-                <div class="card p-4 text-center">
-                    <div class="icon mb-2"><i class="fas fa-droplet"></i></div>
-                    <h5>Total Blood Units</h5>
-                    <h2 th:text="${totalUnits}">0</h2>
+                <div class="card text-white bg-danger">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="card-title">Total Units</div>
+                            <div class="stat-value" th:text="${totalUnits}">0</div>
+                        </div>
+                        <i class="fas fa-tint"></i>
+                    </div>
                 </div>
             </div>
+
+            <!-- Total Donors -->
             <div class="col-md-4">
-                <div class="card p-4 text-center">
-                    <div class="icon mb-2"><i class="fas fa-users"></i></div>
-                    <h5>Total Donors</h5>
-                    <h2 th:text="${totalDonors}">0</h2>
+                <div class="card text-white bg-primary">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="card-title">Total Donors</div>
+                            <div class="stat-value" th:text="${totalDonors}">0</div>
+                        </div>
+                        <i class="fas fa-user-friends"></i>
+                    </div>
                 </div>
             </div>
+
+            <!-- Total Admins -->
             <div class="col-md-4">
-                <div class="card p-4 text-center">
-                    <div class="icon mb-2"><i class="fas fa-user-shield"></i></div>
-                    <h5>Admins</h5>
-                    <h2 th:text="${adminCount}">0</h2>
+                <div class="card text-white bg-dark">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="card-title">Total Admins</div>
+                            <div class="stat-value" th:text="${adminCount}">0</div>
+                        </div>
+                        <i class="fas fa-user-shield"></i>
+                    </div>
                 </div>
             </div>
         </div>

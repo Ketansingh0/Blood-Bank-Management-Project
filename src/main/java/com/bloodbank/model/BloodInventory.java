@@ -26,5 +26,6 @@ public class BloodInventory {
     @Column(name = "last_updated")
     private LocalDateTime lastUpdated;
 
+    private int unit;
     // Optional: You can remove this method since Lombok @Data already generates setters.
 }
