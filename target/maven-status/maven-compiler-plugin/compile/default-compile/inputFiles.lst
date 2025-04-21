@@ -2,6 +2,7 @@
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/repository/UserRepository.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/admin/AdminBloodRequestController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/model/BloodRequest.java
+/Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/RedirectController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/admin/AdminController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/user/BloodRequestController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/model/User.java

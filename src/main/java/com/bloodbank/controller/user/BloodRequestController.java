@@ -57,7 +57,7 @@ public class BloodRequestController {
     }
 
     // User dashboard: view past blood requests
-    @GetMapping("/dashboard")
+    @GetMapping("/user/requests-dashboard")
     public String userDashboard(Model model, Principal principal) {
         String email = principal.getName();
         User user = userRepository.findByEmail(email).orElse(null);

@@ -4,6 +4,7 @@ com/bloodbank/repository/BloodRequestRepository.class
 com/bloodbank/model/BloodRequest.class
 com/bloodbank/controller/user/Valid.class
 com/bloodbank/model/User.class
+com/bloodbank/controller/RedirectController.class
 com/bloodbank/model/BloodRequest$BloodRequestBuilder.class
 com/bloodbank/repository/DonorRepository.class
 com/bloodbank/controller/admin/AdminController.class

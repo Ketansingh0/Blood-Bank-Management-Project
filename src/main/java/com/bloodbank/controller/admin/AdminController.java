@@ -39,7 +39,7 @@ public class AdminController {
     }
 
     // Show all donors
-    @GetMapping("/donors")
+    @GetMapping("/admin/all-donors")
     public String viewDonors(Model model) {
         List<User> donorList = userRepository.findByRole("ROLE_USER");
         model.addAttribute("donorList", donorList);
