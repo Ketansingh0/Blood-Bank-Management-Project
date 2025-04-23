@@ -7,6 +7,7 @@
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/user/BloodRequestController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/model/User.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/repository/DonorRepository.java
+/Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/service/EmailService.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/model/Donor.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/user/UserController.java
 /Users/ketansingh/Desktop/AdvanceJavaProject/blood-bank-management/src/main/java/com/bloodbank/controller/RegistrationController.java
