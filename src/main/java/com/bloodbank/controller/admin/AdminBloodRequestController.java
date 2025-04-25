@@ -1,15 +1,16 @@
+
 package com.bloodbank.controller.admin;
 
 import com.bloodbank.model.BloodRequest;
 import com.bloodbank.repository.BloodRequestRepository;
 import com.bloodbank.service.EmailService;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/admin/requests")
@@ -22,14 +23,26 @@ public class AdminBloodRequestController {
     @GetMapping
     public String viewRequests(@RequestParam(required = false) String status,
                                @RequestParam(required = false) String email,
-                               @RequestParam(required = false) String bloodGroup,
                                Model model) {
 
-        List<BloodRequest> requests = bloodRequestRepository.searchRequests(status, email, bloodGroup);
+        List<BloodRequest> requests = bloodRequestRepository.findAll();
+
+        if (status != null && !status.isEmpty()) {
+            requests = requests.stream()
+                    .filter(r -> r.getStatus() != null && r.getStatus().equalsIgnoreCase(status))
+                    .collect(Collectors.toList());
+        }
+
+        if (email != null && !email.isEmpty()) {
+            requests = requests.stream()
+                    .filter(r -> r.getUser() != null && r.getUser().getEmail() != null &&
+                            r.getUser().getEmail().toLowerCase().contains(email.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
         model.addAttribute("requests", requests);
         model.addAttribute("selectedStatus", status);
         model.addAttribute("selectedEmail", email);
-        model.addAttribute("selectedBloodGroup", bloodGroup);
 
         return "admin/request/requests";
     }

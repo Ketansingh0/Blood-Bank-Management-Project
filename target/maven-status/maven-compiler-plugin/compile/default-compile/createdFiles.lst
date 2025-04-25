@@ -14,6 +14,7 @@ com/bloodbank/model/BloodInventory$BloodInventoryBuilder.class
 com/bloodbank/controller/RegistrationController.class
 com/bloodbank/model/Donor.class
 com/bloodbank/controller/admin/AdminBloodRequestController.class
+com/bloodbank/service/EmailService.class
 com/bloodbank/config/SecurityConfig.class
 com/bloodbank/config/CustomAuthenticationSuccessHandler.class
 com/bloodbank/controller/HomeController.class
