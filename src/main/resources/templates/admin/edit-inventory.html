@@ -52,7 +52,11 @@
         <a href="/admin/inventory" class="active"><i class="fas fa-droplet me-2"></i>Blood Inventory</a>
         <a href="/admin/donors"><i class="fas fa-users me-2"></i>Donors</a>
         <a href="/admin/requests"><i class="fas fa-file-medical me-2"></i>Blood Requests</a>
-        <a href="/logout"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-link text-white w-100 text-start">
+                <i class="fas fa-sign-out-alt me-2"></i>Logout
+            </button>
+        </form>
     </div>
 
     <!-- Main Content -->

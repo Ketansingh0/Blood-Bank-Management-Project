@@ -28,6 +28,17 @@
 </head>
 <body>
 <div class="container">
+    <div class="sidebar">
+        <h4 class="text-white text-center mb-4">User Panel</h4>
+        <a th:href="@{/user/dashboard}" class="active"><i class="fas fa-user me-2"></i>Dashboard</a>
+        <a th:href="@{/user/request-blood}"><i class="fas fa-tint me-2"></i>Request Blood</a>
+        <!-- <a th:href="@{/logout}"><i class="fas fa-sign-out-alt me-2"></i>Logout</a> -->
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-link text-white w-100 text-start">
+                <i class="fas fa-sign-out-alt me-2"></i>Logout
+            </button>
+        </form>
+    </div>
     <div class="form-section">
         <h4 class="mb-4 text-danger text-center">Request Blood</h4>
         <form th:action="@{/user/request-blood}" th:object="${bloodRequest}" method="post">

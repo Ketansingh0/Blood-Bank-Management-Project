@@ -28,9 +28,10 @@ public class UserController {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found with email: " + email));
 
+        
         List<BloodRequest> requests = bloodRequestRepository.findByUser(user);
         model.addAttribute("requests", requests);
 
-        return "user/user-dashboard";
+        return "user/dashboard";
     }
 }

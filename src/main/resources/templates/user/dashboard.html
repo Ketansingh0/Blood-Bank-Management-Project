@@ -61,18 +61,23 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h4 class="text-white text-center mb-4">User Panel</h4>
-        <a href="/user/dashboard" class="active"><i class="fas fa-user me-2"></i>Dashboard</a>
-        <a href="/user/request-blood"><i class="fas fa-tint me-2"></i>Request Blood</a>
-        <a href="/logout"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+        <a th:href="@{/user/dashboard}" class="active"><i class="fas fa-user me-2"></i>Dashboard</a>
+        <a th:href="@{/user/request-blood}"><i class="fas fa-tint me-2"></i>Request Blood</a>
+        <!-- <a th:href="@{/logout}"><i class="fas fa-sign-out-alt me-2"></i>Logout</a> -->
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-link text-white w-100 text-start">
+                <i class="fas fa-sign-out-alt me-2"></i>Logout
+            </button>
+        </form>
     </div>
 
     <!-- Main Content -->
     <div class="main-content container-fluid">
-        <h3 class="mb-4">Welcome, <span th:text="${#authentication.name}">User</span> 👋</h3>
+        <h3 class="mb-4">Welcome, <span th:text="${userName}">User</span> 👋</h3>
 
         <!-- Action Buttons -->
         <div class="mb-4">
-            <a href="/user/request-blood" class="btn btn-danger">
+            <a th:href="@{/user/request-blood}" class="btn btn-danger">
                 <i class="fas fa-plus-circle me-1"></i> Request Blood
             </a>
         </div>
