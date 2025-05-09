@@ -28,36 +28,38 @@ public class BloodRequestController {
         model.addAttribute("bloodRequest", new BloodRequest());
         return "user/request-blood";
     }
-
-    // Handle form submission
+    
     @PostMapping("/request-blood")
-    public String submitBloodRequest(@ModelAttribute @Valid BloodRequest bloodRequest,
+    public String submitBloodRequest(@Valid @ModelAttribute("bloodRequest") BloodRequest bloodRequest,
                                      BindingResult result,
                                      Principal principal,
                                      Model model) {
         if (result.hasErrors()) {
             return "user/request-blood";
         }
-
+    
         String email = principal.getName();
         User user = userRepository.findByEmail(email).orElse(null);
-
+    
         if (user == null) {
             model.addAttribute("error", "User not found");
             return "user/request-blood";
         }
-
+    
         bloodRequest.setUser(user);
         bloodRequest.setRequestDate(LocalDateTime.now());
+        bloodRequest.setStatus("PENDING");
         bloodRequestRepository.save(bloodRequest);
-
+    
         model.addAttribute("success", "Blood request submitted successfully!");
         model.addAttribute("bloodRequest", new BloodRequest()); // reset form
+    
         return "user/request-blood";
     }
+    
 
     // User dashboard: view past blood requests
-    @GetMapping("/user/requests-dashboard")
+    @GetMapping("/user/dashboard")
     public String userDashboard(Model model, Principal principal) {
         String email = principal.getName();
         User user = userRepository.findByEmail(email).orElse(null);
@@ -68,6 +70,6 @@ public class BloodRequestController {
 
         List<BloodRequest> requests = bloodRequestRepository.findByUser(user);
         model.addAttribute("requests", requests);
-        return "user/user-dashboard";
+        return "user/dashboard";
     }
 }

@@ -26,14 +26,14 @@ public class AdminDonorController {
 
 
     // Show add donor form
-    @GetMapping("/add")
+    @GetMapping("/add-donor")
     public String addDonorForm(Model model) {
         model.addAttribute("donor", new Donor());
         return "admin/donor/add-donor";
     }
 
     // Save new donor
-    @PostMapping("/add")
+    @PostMapping("/add-donor")
     public String saveDonor(@ModelAttribute Donor donor) {
         donorRepository.save(donor);
         return "redirect:/admin/donors";
