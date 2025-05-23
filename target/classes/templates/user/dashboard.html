@@ -98,7 +98,7 @@
                             <tr th:each="request, iterStat : ${requests}">
                                 <td th:text="${iterStat.count}">1</td>
                                 <td th:text="${request.bloodGroup}">A+</td>
-                                <td th:text="${request.unit}">2</td>
+                                <td th:text="${request.units}">2</td>
                                 <td>
                                     <span th:text="${request.status}" 
                                           th:classappend="'badge ' + (${request.status} == 'PENDING' ? 'bg-warning' : 
@@ -106,7 +106,7 @@
                                         Status
                                     </span>
                                 </td>
-                                <td th:text="${#temporals.format(request.createdAt, 'dd MMM yyyy HH:mm')}">12 Apr 2025</td>
+                                <td th:text="${#temporals.format(request.requestDate, 'dd MMM yyyy HH:mm')}">12 Apr 2025</td>
                             </tr>
                             <tr th:if="${#lists.isEmpty(requests)}">
                                 <td colspan="5" class="text-center text-muted py-4">No blood requests yet.</td>

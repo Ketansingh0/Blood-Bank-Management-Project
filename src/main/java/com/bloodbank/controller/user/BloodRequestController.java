@@ -53,7 +53,7 @@ public class BloodRequestController {
     
         model.addAttribute("success", "Blood request submitted successfully!");
         model.addAttribute("bloodRequest", new BloodRequest()); // reset form
-    
+        
         return "user/request-blood";
     }
     

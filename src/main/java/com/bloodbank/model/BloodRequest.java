@@ -25,6 +25,8 @@ public class BloodRequest {
 
     private LocalDateTime requestDate;
 
+    private String reason;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

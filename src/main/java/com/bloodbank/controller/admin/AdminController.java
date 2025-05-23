@@ -3,6 +3,7 @@ package com.bloodbank.controller.admin;
 import com.bloodbank.model.BloodInventory;
 import com.bloodbank.model.User;
 import com.bloodbank.repository.BloodInventoryRepository;
+import com.bloodbank.repository.DonorRepository;
 import com.bloodbank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ public class AdminController {
 
     @Autowired
     private BloodInventoryRepository bloodInventoryRepository;
+
+    @Autowired
+    private DonorRepository donorRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -45,7 +49,7 @@ public class AdminController {
         model.addAttribute("donorList", donorList);
         return "admin/donors";
     }
-
+    
     // Show Blood Inventory List
     @GetMapping("/inventory")
     public String inventoryPage(Model model) {
